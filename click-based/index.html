@@ -1,0 +1,298 @@
+<html>
+<head>
+<script
+ src="https://code.jquery.com/jquery-3.4.1.js"
+ integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+ crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="clean-grid.css">
+</head>
+ <h1>game mechanic testing</h1>
+ <div id="start-game">Start</div>
+<div class="board">
+
+
+
+
+
+</div>
+<script>
+	$(document).on('click','#start-game',function() {
+		$('.board').load('city-world.html');
+		$('#start-game').hide();
+	});
+</script>
+<script>
+
+$(document).on('click','.city-up-left',function() {
+	var that = $('.city-up-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('mountain-world.html');
+});
+$(document).on('click','.city-up',function() {
+	var that = $('.city-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('ice-world.html');
+});
+
+$(document).on('click','.city-up-right',function() {
+	var that = $('.city-up-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('forest-world.html');
+});
+
+$(document).on('click','.city-right',function() {
+	var that = $('.city-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('island-world.html');
+});
+
+$(document).on('click','.city-down-right',function() {
+	var that = $('.city-down-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('jungle-world.html');
+});
+
+$(document).on('click','.city-down',function() {
+	var that = $('.city-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('savanna-world.html');
+});
+$(document).on('click','.city-down-left',function() {
+	var that = $('.city-down-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('desert-world.html');
+});
+
+$(document).on('click','.city-left',function() {
+	var that = $('.city-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('swamp-world.html');
+});
+
+$(document).on('click','.desert-up',function() {
+	var that = $('.desert-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('swamp-world.html');
+	that.on('click');
+});
+
+$(document).on('click','.desert-up-right',function() {
+	var that = $('.desert-up-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+
+});
+
+$(document).on('click','.desert-right',function() {
+	var that = $('.desert-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('savanna-world.html');
+	
+});
+
+$(document).on('click','.forest-left',function() {
+	var that = $('.forest-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('ice-world.html');
+});
+$(document).on('click','.forest-down',function() {
+	var that = $('.forest-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('island-world.html');
+});
+
+$(document).on('click','.forest-down-left',function() {
+	var that = $('.forest-down-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.ice-left',function() {
+	var that = $('.ice-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('mountain-world.html');
+});
+$(document).on('click','.ice-right',function() {
+	var that = $('.ice-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('forest-world.html');
+});
+
+$(document).on('click','.ice-down-right',function() {
+	var that = $('.ice-down-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('island-world.html');
+});
+
+$(document).on('click','.ice-down',function() {
+	var that = $('.ice-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.ice-down-left',function() {
+	var that = $('.ice-down-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('swamp-world.html');
+});
+$(document).on('click','.island-up',function() {
+	var that = $('.island-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('forest-world.html');
+});
+$(document).on('click','.island-up-left',function() {
+	var that = $('.island-up-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('ice-world.html');
+});
+
+$(document).on('click','.island-left',function() {
+	var that = $('.island-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.island-down-left',function() {
+	var that = $('.island-down-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('savanna-world.html');
+});
+
+$(document).on('click','.island-down',function() {
+	var that = $('.island-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('jungle-world.html');
+});
+$(document).on('click','.jungle-left',function() {
+	var that = $('.jungle-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('savanna-world.html');
+});
+$(document).on('click','.jungle-up',function() {
+	var that = $('.jungle-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('island-world.html');
+});
+
+$(document).on('click','.jungle-up-left',function() {
+	var that = $('jungle-up-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.mountain-right',function() {
+	var that = $('.mountain-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('ice-world.html');
+});
+$(document).on('click','.mountain-down-right',function() {
+	var that = $('.mountain-down-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.mountain-down',function() {
+	var that = $('.mountain-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('swamp-world.html');
+});
+
+
+$(document).on('click','.savanna-up-left',function() {
+	var that = $('.savanna-up-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('swamp-world.html');
+});
+$(document).on('click','.savanna-up',function() {
+	var that = $('.savanna-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.savanna-up-right',function() {
+	var that = $('.savanna-up-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('island-world.html');
+});
+
+$(document).on('click','.savanna-right',function() {
+	var that = $('.savanna-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('jungle-world.html');
+});
+
+$(document).on('click','.savanna-left',function() {
+	var that = $('.savanna-left');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('desert-world.html');
+});
+
+$(document).on('click','.swamp-up',function() {
+	var that = $('.swamp-up');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('mountain-world.html');
+});
+$(document).on('click','.swamp-up-right',function() {
+	var that = $('.swamp-up-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('ice-world.html');
+});
+
+$(document).on('click','.swamp-right',function() {
+	var that = $('.swamp-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('city-world.html');
+});
+
+$(document).on('click','.swamp-down-right',function() {
+	var that = $('.swamp-down-right');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('savanna-world.html');
+});
+
+$(document).on('click','.swamp-down',function() {
+	var that = $('.swamp-down');
+	that.off('click');
+	$('.board').empty();
+	$('.board').load('desert-world.html');
+});
+</script>
