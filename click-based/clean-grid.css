@@ -21,6 +21,13 @@
 		border: 1px solid black;
 		}
 
+	body {
+	background-position: center; /* Center the image */
+  	background-repeat: no-repeat;
+  	background-size: cover;
+
+	}
+
 	.mountain-world {
 		background-color: tan;
 	}
@@ -48,7 +55,53 @@
 		background-color: orange;
 	}
 	.jungle-world {
-		background-color: darkgreen;
+		background-color: #2D9637;
+	}
+
+	.up {
+		position: absolute; 
+		top:-50; 
+		left:45%;
+	}
+	.up-right {
+	
+		position: absolute; 
+		top:-25; 
+		right:-25;
+	}
+	.right {
+		
+		position: absolute; 
+		top:50%; 
+		right:-50;
+	
+	}
+	.down-right {
+		position: absolute; 
+		bottom: -25; 
+		right: -25;
+		
+	}
+	.down {
+		position: absolute; 
+		bottom:-50; 
+		left:45%;
+	}
+	.down-left {
+		position: absolute; 
+		bottom:-25; 
+		left:-25;
+	}
+	.left {
+
+		position: absolute; 
+		top:50%; 
+		left:-50;
+	}
+	.up-left {
+		position: absolute; 
+		top: -25; 
+		left:-25;
 	}
 
 

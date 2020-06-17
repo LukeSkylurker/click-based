@@ -6,15 +6,42 @@
  crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="clean-grid.css">
 </head>
+<body>
+<div style="position: absolute: top:50px;">
  <h1>game mechanic testing</h1>
  <div id="start-game">Start</div>
-<div class="board">
-
-
-
+</div>
+<div class="board" style="position: absolute;left: 10px; top: 100px; background-image: url('images/map-bk.PNG');">
 
 
 </div>
+<div class="generator-container" style="position: absolute; left: 640px; top: 134px; border: 2px solid black; background-image:url('images/canvas-narrow.PNG')">
+	<div class="rarity-colors" style="position:absolute;top:0;left:0; width: 300px;">
+		<div class="rarity-color-bar rarity-color-white" style="background-color:white;"></div>
+		<div class="rarity-color-bar rarity-color-yellow" style="background-color:yellow;"></div>
+		<div class="rarity-color-bar rarity-color-green" style="background-color:green;"></div>
+		<div class="rarity-color-bar rarity-color-blue" style="background-color:blue;"></div>
+		<div class="rarity-color-bar rarity-color-purple" style="background-color:purple;"></div>
+		<div class="rarity-color-bar rarity-color-orange" style="background-color:orange;"></div>
+	</div>
+	<style>
+		.rarity-color-bar {
+			float: left;
+			width: 48px;
+			height: 10px;
+			border: 1px solid black;
+			display:inline-block;
+			z-index: 2;
+		}
+	</style>
+	<div class="item-container-1"></div>
+	<div class="item-container-2"></div>
+	<div class="item-container-3"></div>
+	<div class="item-container-4"></div>
+	<div class="item-container-5"></div>
+</div>
+</body>
+</html>
 <script>
 	$(document).on('click','#start-game',function() {
 		$('.board').load('city-world.html');
@@ -28,6 +55,7 @@ $(document).on('click','.city-up-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('mountain-world.html');
+	$('body').css('background-image','url("images/mountain-bk.PNG")');
 });
 $(document).on('click','.city-up',function() {
 	var that = $('.city-up');
@@ -55,6 +83,7 @@ $(document).on('click','.city-down-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('jungle-world.html');
+	$('body').css('background-image','url("images/jungle-bk.PNG")');
 });
 
 $(document).on('click','.city-down',function() {
@@ -62,6 +91,7 @@ $(document).on('click','.city-down',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('savanna-world.html');
+	$('body').css('background-image','url("images/savanna-bk.PNG")');
 });
 $(document).on('click','.city-down-left',function() {
 	var that = $('.city-down-left');
@@ -296,3 +326,381 @@ $(document).on('click','.swamp-down',function() {
 	$('.board').load('desert-world.html');
 });
 </script>
+
+<script>
+
+var randomItemWhite;
+var randomItemYellow;
+var randomItemGreen;
+var randomItemBlue;
+var randomItemPurple;
+
+function randomIzer1() {
+		var itemsWhite = ["wood", "stone", "clay", "hay", "manure"];
+		var itemsYellow = ["feather","", "iron-ore","","", "berries", "bone","flowers", "pelt"];
+		var itemsGreen = ["wax","", "leather","","","","geode","", "coal","","wool", "oil", "seeds", "copper-ore"];
+		var itemsBlue = ["silver-ore","", "crystal-shard","","","uncut-gem", "","", "","arrows","","", "cloth","","","fairydust", "", "unicorn-horn", "black-powder",""];
+		var itemsPurple = ["", "", "", "gold-ore","", "ruby","","","silver-coin", "", "", "", "poison","", "","", "farming-enchantment", "", "","speed-enchantment","dragon-scale","", "", "dragon-tooth", "", "", "","fairy-wing","","","emerald", "gold-ring", "glowing-crystal", "moonbeam","stardust", "","","","",];
+		randomItemWhite = itemsWhite[Math.floor(Math.random() * itemsWhite.length)];
+		randomItemYellow = itemsYellow[Math.floor(Math.random() * itemsYellow.length)];
+		randomItemGreen = itemsGreen[Math.floor(Math.random() * itemsGreen.length)];
+		randomItemBlue = itemsBlue[Math.floor(Math.random() * itemsBlue.length)];
+		randomItemPurple = itemsPurple[Math.floor(Math.random() * itemsPurple.length)];
+}
+randomIzer1();
+
+var moveDownWhite = 0;
+var moveDownYellow = 0;
+var moveDownGreen = 0;
+var moveDownBlue = 0;
+var moveDownPurple = 0;
+
+$(document).ready(function(){
+
+var myIntervalFuncWhite = setInterval(movingDownWhite,50);
+var myIntervalFuncYellow = setInterval(movingDownYellow,70);
+var myIntervalFuncGreen = setInterval(movingDownGreen,90);
+var myIntervalFuncBlue = setInterval(movingDownBlue,120);
+var myIntervalFuncPurple = setInterval(movingDownPurple,220);
+
+
+function movingDownWhite() {
+		if (moveDownWhite < 520) {
+			moveDownWhite = moveDownWhite + 6;
+			$('.item-container-1').css('top', moveDownWhite);
+		}
+		else {
+			moveDownWhite = 0;
+			$(".item-container-1").empty();
+			randomIzer1();
+			$(".item-container-1").append('<div class="item ' + randomItemWhite + '">' +randomItemWhite+ '</div>');
+			movingDownWhite();
+		}
+}
+
+function movingDownYellow() {
+		if (moveDownYellow < 520) {
+			moveDownYellow = moveDownYellow + 6;
+			$('.item-container-2').css('top', moveDownYellow);
+		}
+		else {
+			moveDownYellow = 0;
+			$(".item-container-2").empty();
+			randomIzer1();
+			$(".item-container-2").append('<div class="item ' + randomItemYellow + '">' + randomItemYellow + '</div>');
+			movingDownYellow();
+		}
+}
+
+function movingDownGreen() {
+		if (moveDownGreen < 520) {
+			moveDownGreen = moveDownGreen + 6;
+			$('.item-container-3').css('top', moveDownGreen);
+		}
+		else {
+			moveDownGreen = 0;
+			$(".item-container-3").empty();
+			randomIzer1();
+			$(".item-container-3").append('<div class="item ' + randomItemGreen + '">' + randomItemGreen + '</div>');
+			movingDownGreen();
+		}
+}
+
+function movingDownBlue() {
+		if (moveDownBlue < 520) {
+			moveDownBlue = moveDownBlue + 6;
+			$('.item-container-4').css('top', moveDownBlue);
+		}
+		else {
+			moveDownBlue = 0;
+			$(".item-container-4").empty();
+			randomIzer1();
+			$(".item-container-4").append('<div class="item ' + randomItemBlue + '">' + randomItemBlue + '</div>');
+			movingDownBlue();
+		}
+}
+
+function movingDownPurple() {
+		if (moveDownPurple < 520) {
+			moveDownPurple = moveDownPurple + 6;
+			$('.item-container-5').css('top', moveDownPurple);
+		}
+		else {
+			moveDownPurple = 0;
+			$(".item-container-5").empty();
+			randomIzer1();
+			$(".item-container-5").append('<div class="item ' + randomItemPurple + '">' + randomItemPurple + '</div>');
+			movingDownPurple();
+		}
+}
+
+
+
+});
+	$( document ).ready(function() {
+		console.log('here');
+		$(".item-container-1").append('<div class="item ' + randomItemWhite + '">' + randomItemWhite + '</div>');
+		$(".item-container-2").append('<div class="item ' + randomItemYellow + '">' + randomItemYellow + '</div>');
+		$(".item-container-3").append('<div class="item ' + randomItemGreen + '">' + randomItemGreen + '</div>');
+		$(".item-container-4").append('<div class="item ' + randomItemBlue + '">' + randomItemBlue + '</div>');
+		$(".item-container-5").append('<div class="item ' + randomItemPurple + '">' + randomItemPurple + '</div>');
+	});
+		
+				//WHITE
+	$(document).on('click','.item',function() {
+		if ($(this).hasClass('manure')) {
+			cityWhiteDrops.manure++;
+		}
+		else if ($(this).hasClass('hay')) {
+			cityWhiteDrops.hay++;
+		}
+		else if ($(this).hasClass('stone')) {
+			cityWhiteDrops.stone++;
+		}
+		else if ($(this).hasClass('clay')) {
+			cityWhiteDrops.clay++;
+		}
+		else if ($(this).hasClass('wood')) {
+			cityWhiteDrops.wood++;
+		}
+				//YELLOW
+		else if ($(this).hasClass('feather')) {
+			cityYellowDrops.feather++;
+		}
+		else if ($(this).hasClass('iron-ore')) {
+			cityYellowDrops.ironore++;
+		}
+		else if ($(this).hasClass('berries')) {
+			cityYellowDrops.berries++;
+		}
+		else if ($(this).hasClass('bone')) {
+			cityYellowDrops.bone++;
+		}
+		else if ($(this).hasClass('pelt')) {
+			cityYellowDrops.pelt++;
+		}
+				//GREEN "wax","", "leather","","", "geode","", "coal","","","", "oil
+		else if ($(this).hasClass('wax')) {
+			cityGreenDrops.wax++;
+		}
+		else if ($(this).hasClass('leather')) {
+			cityGreenDrops.leather++;
+		}
+		else if ($(this).hasClass('geode')) {
+			cityGreenDrops.geode++;
+		}
+		else if ($(this).hasClass('coal')) {
+			cityGreenDrops.coal++;
+		}
+		else if ($(this).hasClass('oil')) {
+			cityGreenDrops.oil++;
+		}
+		else if ($(this).hasClass('seeds')) {
+			cityGreenDrops.seeds++;
+		}
+		else if ($(this).hasClass('copper-ore')) {
+			cityGreenDrops.copperore++;
+		}
+				//BLUE
+		
+		else if ($(this).hasClass('silver-ore')) {
+		cityBlueDrops.silverore++;
+		}
+		else if ($(this).hasClass('crystal-shard')) {
+			cityBlueDrops.crystalshard++;
+		}
+		else if ($(this).hasClass('uncut-gem')) {
+			cityBlueDrops.uncutgem++;
+		}
+		else if ($(this).hasClass('arrows')) {
+			cityBlueDrops.arrows++;
+		}
+		else if ($(this).hasClass('cloth')) {
+			cityBlueDrops.cloth++;
+		}
+		else if ($(this).hasClass('fairydust')) {
+			cityBlueDrops.fairydust++;
+		}
+		else if ($(this).hasClass('unicorn-horn')) {
+			cityBlueDrops.unicornhorn++;
+		}
+		else if ($(this).hasClass('black-powder')) {
+			cityBlueDrops.blackpowder++;
+		}
+		//"", "", "", "gold-ore","", "ruby","","","silver-coin", "", "", "", "poison","", "","", "farming-enchantment", "", "","speed-enchantment","dragon-scale","", "", "dragon-tooth", "", "", "","fairy-wing","","","emerald", "gold-ring", "glowing-crystal", "moonbeam","stardust", "","","","",
+		
+				//Purple
+		else if ($(this).hasClass('gold-ore')) {
+		cityPurpleDrops.goldore++;
+		}
+		else if ($(this).hasClass('ruby')) {
+			cityPurpleDrops.ruby++;
+		}
+		else if ($(this).hasClass('silver-coin')) {
+			cityPurpleDrops.silvercoin++;
+		}
+		else if ($(this).hasClass('poison')) {
+			cityPurpleDrops.poison++;
+		}
+		else if ($(this).hasClass('farming-enchantment')) {
+			cityPurpleDrops.farmingenchantment++;
+		}
+		else if ($(this).hasClass('speed-enchantment')) {
+			cityPurpleDrops.speedenchantment++;
+		}
+		else if ($(this).hasClass('dragon-scale')) {
+			cityPurpleDrops.dragonscale++;
+		}
+		else if ($(this).hasClass('dragon-tooth')) {
+			cityPurpleDrops.dragontooth++;
+		}
+		else if ($(this).hasClass('fairy-wing')) {
+			cityPurpleDrops.fairywing++;
+		}
+		else if ($(this).hasClass('emerald')) {
+			cityPurpleDrops.dragontooth++;
+		}
+		else if ($(this).hasClass('gold-ring')) {
+			cityPurpleDrops.goldring++;
+		}
+		else if ($(this).hasClass('glowing-crystal')) {
+			cityPurpleDrops.glowingcrystal++;
+		}
+		else if ($(this).hasClass('gold-ring')) {
+			cityPurpleDrops.goldring++;
+		}
+		else {
+			console.log('something went wrong');
+		}
+		$(this).remove();
+		console.log(cityWhiteDrops);
+		console.log(cityYellowDrops);
+		console.log(cityGreenDrops);
+		console.log(cityBlueDrops);
+		console.log(cityPurpleDrops);
+	});
+
+var cityWhiteDrops = {
+	hay: 0,
+	wood: 0,
+	stone: 0,
+	clay: 0,
+	manure: 0
+}
+
+var cityYellowDrops = {
+	feather: 0,
+	ironore: 0,
+	berries: 0,
+	bone: 0,
+	pelt: 0
+}
+
+var cityGreenDrops = {
+	wax: 0,
+	leather: 0,
+	geode: 0,
+	coal: 0,
+	oil: 0,
+	seeds:0,
+	copperore:0
+}
+
+var cityBlueDrops = {
+	silverore: 0,
+	crystalshard:0,
+	uncutgem:0,
+	arrows:0,
+	cloth:0,
+	fairydust:0,
+	unicornhorn:0,
+	blackpowder:0,
+}
+
+var cityPurpleDrops = {
+	goldore: 0,
+	ruby:0,
+	silvercoin:0,
+	poison:0,
+	farmingenchantment:0,
+	speedenchantment:0,
+	dragonscale:0,
+	dragontooth:0,
+	fairywing:0,
+	emerald:0,
+	goldring:0,
+	glowingcrystal:0,
+	moonbeam:0,
+	stardust:0
+}
+</script>
+
+<style>
+	.generator-container {
+		height: 560px;
+		width: 300px;
+		background-color: grey;
+		position: relative;
+		z-index: 0;
+	}
+	.item-container-1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50px;
+		height: 50px;
+	}
+	.item-container-2 {
+		position: absolute;
+		top: 0;
+		left: 50;
+		width: 50px;
+		height: 50px;
+	}
+	.item-container-3 {
+		position: absolute;
+		top: 0;
+		left: 100;
+		width: 50px;
+		height: 50px;
+	}
+	.item-container-4 {
+		position: absolute;
+		top: 0;
+		left: 150;
+		width: 50px;
+		height: 50px;
+	}
+	.item-container-5 {
+		position: absolute;
+		top: 0;
+		left: 200;
+		width: 50px;
+		height: 50px;
+	}
+	.item {
+		position: relative;
+		z-index: 2;
+		width: 49px;
+		height: 49px;
+	}
+
+	.wood, .clay, .stone, .manure,.hay {
+		background-color: white;
+	}
+	
+	.feather, .iron-ore, .berries, .bone, .pelt, .flowers {
+		background-color: yellow;
+	}
+	.wax, .leather, .geode, .coal, .oil, .wool, .copper-ore, .seeds {
+		background-color: green;
+	}
+	.silver-ore, .crystal-shard, .uncut-gem, .arrows, .cloth, .fairydust, .unicorn-horn, .black-powder {
+		background-color: blue;
+	}
+
+	.gold-ore, .ruby, .silver-coin,	.poison, .farming-enchantment, .speed-enchantment, .dragon-scale, .dragon-tooth, .fairy-wing, .emerald, .gold-ring, .moonbeam, .stardust, .glowing-crystal {
+		background-color: purple;
+	}
+
+	</style>

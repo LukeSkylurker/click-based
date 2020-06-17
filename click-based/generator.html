@@ -7,6 +7,7 @@
 	<div class="item-container-2"></div>
 	<div class="item-container-3"></div>
 	<div class="item-container-4"></div>
+	<div class="item-container-5"></div>
 </div>
 
 <script>
@@ -15,16 +16,19 @@ var randomItemWhite;
 var randomItemYellow;
 var randomItemGreen;
 var randomItemBlue;
+var randomItemPurple;
 
 function randomIzer1() {
 		var itemsWhite = ["wood", "stone", "clay", "hay", "manure"];
 		var itemsYellow = ["feather","", "iron-ore","","", "berries", "bone","flowers", "pelt"];
 		var itemsGreen = ["wax","", "leather","","","","geode","", "coal","","wool", "oil", "seeds", "copper-ore"];
-		var itemsBlue = ["silver-ore","", "crystal-shard","","","uncut-gem", "","", "","arrows","","", "cloth","","","fairydust", "", "unicorn-horn", "black-powder"];
+		var itemsBlue = ["silver-ore","", "crystal-shard","","","uncut-gem", "","", "","arrows","","", "cloth","","","fairydust", "", "unicorn-horn", "black-powder",""];
+		var itemsPurple = ["", "", "", "gold-ore","", "ruby","","","silver-coin", "", "", "", "poison","", "","", "farming-enchantment", "", "","speed-enchantment","dragon-scale","", "", "dragon-tooth", "", "", "","fairy-wing","","","emerald", "gold-ring", "glowing-crystal", "moonbeam","stardust", "","","","",];
 		randomItemWhite = itemsWhite[Math.floor(Math.random() * itemsWhite.length)];
 		randomItemYellow = itemsYellow[Math.floor(Math.random() * itemsYellow.length)];
 		randomItemGreen = itemsGreen[Math.floor(Math.random() * itemsGreen.length)];
 		randomItemBlue = itemsBlue[Math.floor(Math.random() * itemsBlue.length)];
+		randomItemPurple = itemsPurple[Math.floor(Math.random() * itemsPurple.length)];
 }
 randomIzer1();
 
@@ -32,7 +36,7 @@ var moveDownWhite = 0;
 var moveDownYellow = 0;
 var moveDownGreen = 0;
 var moveDownBlue = 0;
-
+var moveDownPurple = 0;
 
 $(document).ready(function(){
 
@@ -40,11 +44,12 @@ var myIntervalFuncWhite = setInterval(movingDownWhite,50);
 var myIntervalFuncYellow = setInterval(movingDownYellow,70);
 var myIntervalFuncGreen = setInterval(movingDownGreen,90);
 var myIntervalFuncBlue = setInterval(movingDownBlue,120);
+var myIntervalFuncPurple = setInterval(movingDownPurple,220);
 
 
 function movingDownWhite() {
-		if (moveDownWhite < 720) {
-			moveDownWhite = moveDownWhite + 8;
+		if (moveDownWhite < 540) {
+			moveDownWhite = moveDownWhite + 6;
 			$('.item-container-1').css('top', moveDownWhite);
 		}
 		else {
@@ -57,8 +62,8 @@ function movingDownWhite() {
 }
 
 function movingDownYellow() {
-		if (moveDownYellow < 720) {
-			moveDownYellow = moveDownYellow + 8;
+		if (moveDownYellow < 540) {
+			moveDownYellow = moveDownYellow + 6;
 			$('.item-container-2').css('top', moveDownYellow);
 		}
 		else {
@@ -71,8 +76,8 @@ function movingDownYellow() {
 }
 
 function movingDownGreen() {
-		if (moveDownGreen < 720) {
-			moveDownGreen = moveDownGreen + 8;
+		if (moveDownGreen < 540) {
+			moveDownGreen = moveDownGreen + 6;
 			$('.item-container-3').css('top', moveDownGreen);
 		}
 		else {
@@ -85,8 +90,8 @@ function movingDownGreen() {
 }
 
 function movingDownBlue() {
-		if (moveDownBlue < 720) {
-			moveDownBlue = moveDownBlue + 8;
+		if (moveDownBlue < 540) {
+			moveDownBlue = moveDownBlue + 6;
 			$('.item-container-4').css('top', moveDownBlue);
 		}
 		else {
@@ -95,6 +100,20 @@ function movingDownBlue() {
 			randomIzer1();
 			$(".item-container-4").append('<div class="item ' + randomItemBlue + '">' + randomItemBlue + '</div>');
 			movingDownBlue();
+		}
+}
+
+function movingDownPurple() {
+		if (moveDownPurple < 540) {
+			moveDownPurple = moveDownPurple + 6;
+			$('.item-container-5').css('top', moveDownPurple);
+		}
+		else {
+			moveDownPurple = 0;
+			$(".item-container-5").empty();
+			randomIzer1();
+			$(".item-container-5").append('<div class="item ' + randomItemPurple + '">' + randomItemPurple + '</div>');
+			movingDownPurple();
 		}
 }
 
@@ -107,6 +126,7 @@ function movingDownBlue() {
 		$(".item-container-2").append('<div class="item ' + randomItemYellow + '">' + randomItemYellow + '</div>');
 		$(".item-container-3").append('<div class="item ' + randomItemGreen + '">' + randomItemGreen + '</div>');
 		$(".item-container-4").append('<div class="item ' + randomItemBlue + '">' + randomItemBlue + '</div>');
+		$(".item-container-5").append('<div class="item ' + randomItemPurple + '">' + randomItemPurple + '</div>');
 	});
 		
 				//WHITE
@@ -190,6 +210,48 @@ function movingDownBlue() {
 		else if ($(this).hasClass('black-powder')) {
 			cityBlueDrops.blackpowder++;
 		}
+		//"", "", "", "gold-ore","", "ruby","","","silver-coin", "", "", "", "poison","", "","", "farming-enchantment", "", "","speed-enchantment","dragon-scale","", "", "dragon-tooth", "", "", "","fairy-wing","","","emerald", "gold-ring", "glowing-crystal", "moonbeam","stardust", "","","","",
+		
+				//Purple
+		else if ($(this).hasClass('gold-ore')) {
+		cityPurpleDrops.goldore++;
+		}
+		else if ($(this).hasClass('ruby')) {
+			cityPurpleDrops.ruby++;
+		}
+		else if ($(this).hasClass('silver-coin')) {
+			cityPurpleDrops.silvercoin++;
+		}
+		else if ($(this).hasClass('poison')) {
+			cityPurpleDrops.poison++;
+		}
+		else if ($(this).hasClass('farming-enchantment')) {
+			cityPurpleDrops.farmingenchantment++;
+		}
+		else if ($(this).hasClass('speed-enchantment')) {
+			cityPurpleDrops.speedenchantment++;
+		}
+		else if ($(this).hasClass('dragon-scale')) {
+			cityPurpleDrops.dragonscale++;
+		}
+		else if ($(this).hasClass('dragon-tooth')) {
+			cityPurpleDrops.dragontooth++;
+		}
+		else if ($(this).hasClass('fairy-wing')) {
+			cityPurpleDrops.fairywing++;
+		}
+		else if ($(this).hasClass('emerald')) {
+			cityPurpleDrops.dragontooth++;
+		}
+		else if ($(this).hasClass('gold-ring')) {
+			cityPurpleDrops.goldring++;
+		}
+		else if ($(this).hasClass('glowing-crystal')) {
+			cityPurpleDrops.glowingcrystal++;
+		}
+		else if ($(this).hasClass('gold-ring')) {
+			cityPurpleDrops.goldring++;
+		}
 		else {
 			console.log('something went wrong');
 		}
@@ -198,6 +260,7 @@ function movingDownBlue() {
 		console.log(cityYellowDrops);
 		console.log(cityGreenDrops);
 		console.log(cityBlueDrops);
+		console.log(cityPurpleDrops);
 	});
 
 var cityWhiteDrops = {
@@ -236,11 +299,28 @@ var cityBlueDrops = {
 	unicornhorn:0,
 	blackpowder:0,
 }
+
+var cityPurpleDrops = {
+	goldore: 0,
+	ruby:0,
+	silvercoin:0,
+	poison:0,
+	farmingenchantment:0,
+	speedenchantment:0,
+	dragonscale:0,
+	dragontooth:0,
+	fairywing:0,
+	emerald:0,
+	goldring:0,
+	glowingcrystal:0,
+	moonbeam:0,
+	stardust:0
+}
 </script>
 
 <style>
 	.generator-container {
-		height: 800px;
+		height: 560px;
 		width: 400px;
 		background-color: lightgreen;
 		position: relative;
@@ -274,6 +354,13 @@ var cityBlueDrops = {
 		width: 50px;
 		height: 50px;
 	}
+	.item-container-5 {
+		position: absolute;
+		top: 0;
+		left: 218;
+		width: 50px;
+		height: 50px;
+	}
 	.item {
 		position: relative;
 		z-index: 2;
@@ -293,6 +380,10 @@ var cityBlueDrops = {
 	}
 	.silver-ore, .crystal-shard, .uncut-gem, .arrows, .cloth, .fairydust, .unicorn-horn, .black-powder {
 		background-color: blue;
+	}
+
+	.gold-ore, .ruby, .silver-coin,	.poison, .farming-enchantment, .speed-enchantment, .dragon-scale, .dragon-tooth, .fairy-wing, .emerald, .gold-ring, .moonbeam, .stardust, .glowing-crystal {
+		background-color: purple;
 	}
 
 	</style>
