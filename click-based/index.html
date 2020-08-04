@@ -5,17 +5,35 @@
  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
  crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="clean-grid.css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-<div style="position: absolute: top:50px;">
- <h1>game mechanic testing</h1>
- <div id="start-game">Start</div>
+<body style="margin:0px;padding:0px;">
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  </div>
 </div>
-<div class="board" style="position: absolute;left: 10px; top: 100px; background-image: url('images/map-bk.PNG');">
+<div class="title-logo" style="background-color: tan; text-align: center; margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px; height: 50px; line-height: 50px; font-size: 32px;">Traveler's Kingdom</div>
+<div class="menu" style="width:100%; height: 50px; background-color: #004169; color: white; z-index: 2; margin-top: 0px; text-align: center; display:inline-block; font-size: 24px;"><div id="start-game" style="line-height: 50px; float: left; margin-left: 50px;">Start</div><div class="crafting pointer" style="line-height: 50px; float: left; margin-left: 50px;">Craft</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Equip</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Inventory</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Farm</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Tent</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Quests</div></div>
+
+<div class="arenas generator-container" style="position: absolute; left: 346px; top: 132px; border: 2px solid black; background-image:url('images/wood-narrow.PNG'); text-align: center; font-size: 40px; font-family: Arial; line-height: 110px;">
+	<div class="single-arena pointer" style="height:49%;width:298px; background-color:#E17130; opacity: 0.85; border: 1px solid black;">
+		<div class="preview status">
+			<div class="preview-title module-title">preview/status</div>
+		</div>
+	</div>
+	<div class="single-arena pointer" style="height:49%;width:298px; background-color:tan; opacity: 0.85; border: 1px solid black;">
+		<div class="dialogue">
+			<div class="dialogue-title module-title">dialogue</div>
+		</div>
+	</div>
+</div>
+
+<div class="board" style="position: absolute;left: 660px; top: 100px; background-image: url('images/map-bk.PNG');">
 
 
 </div>
-<div class="generator-container" style="position: absolute; left: 640px; top: 134px; border: 2px solid black; background-image:url('images/canvas-narrow.PNG')">
+<div class="generator-container" style="position: absolute; left: 1240px; top: 132px; border: 2px solid black; background-image:url('images/canvas-narrow.PNG')">
 	<div class="rarity-colors" style="position:absolute;top:0;left:0; width: 300px;">
 		<div class="rarity-color-bar rarity-color-white" style="background-color:white;"></div>
 		<div class="rarity-color-bar rarity-color-yellow" style="background-color:yellow;"></div>
@@ -48,6 +66,24 @@
 		$('#start-game').hide();
 	});
 </script>
+
+<script>
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  $('body').css('overflow-y','scroll');
+}
+$(document).ready(function(){
+  $(".crafting").click(function(){
+    document.getElementById("myNav").style.width = "100%";
+    $('.overlay-content').empty();
+   $('.overlay-content').load('crafting.html');
+   //watchedExplainerVid();
+   //$('body').css('overflow-y','hidden');
+});
+});
+</script>
+
+
 <script>
 
 $(document).on('click','.city-up-left',function() {
@@ -62,6 +98,7 @@ $(document).on('click','.city-up',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('ice-world.html');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 
 $(document).on('click','.city-up-right',function() {
@@ -69,6 +106,7 @@ $(document).on('click','.city-up-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('forest-world.html');
+	$('body').css('background-image','url("images/forest-bk.PNG")');
 });
 
 $(document).on('click','.city-right',function() {
@@ -76,6 +114,7 @@ $(document).on('click','.city-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
+	$('body').css('background-image','url("island/ice-bk.PNG")');
 });
 
 $(document).on('click','.city-down-right',function() {
@@ -98,6 +137,7 @@ $(document).on('click','.city-down-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('desert-world.html');
+	$('body').css('background-image','url("images/desert-bk.PNG")');
 });
 
 $(document).on('click','.city-left',function() {
@@ -105,6 +145,7 @@ $(document).on('click','.city-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('swamp-world.html');
+	$('body').css('background-image','url("images/swamp-bk.PNG")');
 });
 
 $(document).on('click','.desert-up',function() {
@@ -112,7 +153,7 @@ $(document).on('click','.desert-up',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('swamp-world.html');
-	that.on('click');
+	$('body').css('background-image','url("images/swamp-bk.PNG")');
 });
 
 $(document).on('click','.desert-up-right',function() {
@@ -120,6 +161,7 @@ $(document).on('click','.desert-up-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 
 });
 
@@ -128,6 +170,7 @@ $(document).on('click','.desert-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('savanna-world.html');
+	$('body').css('background-image','url("images/savanna-bk.PNG")');
 	
 });
 
@@ -136,12 +179,14 @@ $(document).on('click','.forest-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('ice-world.html');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 $(document).on('click','.forest-down',function() {
 	var that = $('.forest-down');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
+	$('body').css('background-image','url("images/island-bk.PNG")');
 });
 
 $(document).on('click','.forest-down-left',function() {
@@ -149,6 +194,7 @@ $(document).on('click','.forest-down-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.ice-left',function() {
@@ -156,12 +202,14 @@ $(document).on('click','.ice-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('mountain-world.html');
+	$('body').css('background-image','url("images/mountain-bk.PNG")');
 });
 $(document).on('click','.ice-right',function() {
 	var that = $('.ice-right');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('forest-world.html');
+	$('body').css('background-image','url("images/forest-bk.PNG")');
 });
 
 $(document).on('click','.ice-down-right',function() {
@@ -169,6 +217,7 @@ $(document).on('click','.ice-down-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
+	$('body').css('background-image','url("images/island-bk.PNG")');
 });
 
 $(document).on('click','.ice-down',function() {
@@ -176,6 +225,7 @@ $(document).on('click','.ice-down',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.ice-down-left',function() {
@@ -183,18 +233,21 @@ $(document).on('click','.ice-down-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('swamp-world.html');
+	$('body').css('background-image','url("images/swamp-bk.PNG")');
 });
 $(document).on('click','.island-up',function() {
 	var that = $('.island-up');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('forest-world.html');
+	$('body').css('background-image','url("images/forest-bk.PNG")');
 });
 $(document).on('click','.island-up-left',function() {
 	var that = $('.island-up-left');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('ice-world.html');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 
 $(document).on('click','.island-left',function() {
@@ -202,6 +255,7 @@ $(document).on('click','.island-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.island-down-left',function() {
@@ -209,6 +263,7 @@ $(document).on('click','.island-down-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('savanna-world.html');
+	$('body').css('background-image','url("images/savanna-bk.PNG")');
 });
 
 $(document).on('click','.island-down',function() {
@@ -216,18 +271,21 @@ $(document).on('click','.island-down',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('jungle-world.html');
+	$('body').css('background-image','url("images/jungle-bk.PNG")');
 });
 $(document).on('click','.jungle-left',function() {
 	var that = $('.jungle-left');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('savanna-world.html');
+	$('body').css('background-image','url("images/savanna-bk.PNG")');
 });
 $(document).on('click','.jungle-up',function() {
 	var that = $('.jungle-up');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
+	$('body').css('background-image','url("images/island-bk.PNG")');
 });
 
 $(document).on('click','.jungle-up-left',function() {
@@ -235,6 +293,7 @@ $(document).on('click','.jungle-up-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.mountain-right',function() {
@@ -242,12 +301,14 @@ $(document).on('click','.mountain-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('ice-world.html');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 $(document).on('click','.mountain-down-right',function() {
 	var that = $('.mountain-down-right');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.mountain-down',function() {
@@ -255,6 +316,7 @@ $(document).on('click','.mountain-down',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('swamp-world.html');
+	$('body').css('background-image','url("images/swamp-bk.PNG")');
 });
 
 
@@ -263,12 +325,14 @@ $(document).on('click','.savanna-up-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('swamp-world.html');
+	$('body').css('background-image','url("images/swamp-bk.PNG")');
 });
 $(document).on('click','.savanna-up',function() {
 	var that = $('.savanna-up');
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.savanna-up-right',function() {
@@ -276,6 +340,7 @@ $(document).on('click','.savanna-up-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
+	$('body').css('background-image','url("images/island-bk.PNG")');
 });
 
 $(document).on('click','.savanna-right',function() {
@@ -283,6 +348,7 @@ $(document).on('click','.savanna-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('jungle-world.html');
+	$('body').css('background-image','url("images/jungle-bk.PNG")');
 });
 
 $(document).on('click','.savanna-left',function() {
@@ -290,6 +356,7 @@ $(document).on('click','.savanna-left',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('desert-world.html');
+	$('body').css('background-image','url("images/desert-bk.PNG")');
 });
 
 $(document).on('click','.swamp-up',function() {
@@ -303,6 +370,7 @@ $(document).on('click','.swamp-up-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('ice-world.html');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 
 $(document).on('click','.swamp-right',function() {
@@ -310,6 +378,7 @@ $(document).on('click','.swamp-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('city-world.html');
+	$('body').css('background-image','url("images/city-bk.PNG")');
 });
 
 $(document).on('click','.swamp-down-right',function() {
@@ -317,6 +386,7 @@ $(document).on('click','.swamp-down-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('savanna-world.html');
+	$('body').css('background-image','url("images/savanna-bk.PNG")');
 });
 
 $(document).on('click','.swamp-down',function() {
@@ -324,8 +394,11 @@ $(document).on('click','.swamp-down',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('desert-world.html');
+	$('body').css('background-image','url("images/desert-bk.PNG")');
 });
 </script>
+
+
 
 <script>
 
@@ -634,73 +707,3 @@ var cityPurpleDrops = {
 	stardust:0
 }
 </script>
-
-<style>
-	.generator-container {
-		height: 560px;
-		width: 300px;
-		background-color: grey;
-		position: relative;
-		z-index: 0;
-	}
-	.item-container-1 {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 50px;
-		height: 50px;
-	}
-	.item-container-2 {
-		position: absolute;
-		top: 0;
-		left: 50;
-		width: 50px;
-		height: 50px;
-	}
-	.item-container-3 {
-		position: absolute;
-		top: 0;
-		left: 100;
-		width: 50px;
-		height: 50px;
-	}
-	.item-container-4 {
-		position: absolute;
-		top: 0;
-		left: 150;
-		width: 50px;
-		height: 50px;
-	}
-	.item-container-5 {
-		position: absolute;
-		top: 0;
-		left: 200;
-		width: 50px;
-		height: 50px;
-	}
-	.item {
-		position: relative;
-		z-index: 2;
-		width: 49px;
-		height: 49px;
-	}
-
-	.wood, .clay, .stone, .manure,.hay {
-		background-color: white;
-	}
-	
-	.feather, .iron-ore, .berries, .bone, .pelt, .flowers {
-		background-color: yellow;
-	}
-	.wax, .leather, .geode, .coal, .oil, .wool, .copper-ore, .seeds {
-		background-color: green;
-	}
-	.silver-ore, .crystal-shard, .uncut-gem, .arrows, .cloth, .fairydust, .unicorn-horn, .black-powder {
-		background-color: blue;
-	}
-
-	.gold-ore, .ruby, .silver-coin,	.poison, .farming-enchantment, .speed-enchantment, .dragon-scale, .dragon-tooth, .fairy-wing, .emerald, .gold-ring, .moonbeam, .stardust, .glowing-crystal {
-		background-color: purple;
-	}
-
-	</style>

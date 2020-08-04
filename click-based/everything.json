@@ -1,0 +1,136 @@
+{
+"everything": {
+	"allItems": [
+	{
+		"name": "hay","id": 1,"rarity": "white","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["house","workbench","chair","door","newroom","medium tent","large tent","bookshelf","desk","table"],
+		"craftby": []
+	},
+	{
+		"name": "wood","id": 2,"rarity": "white","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["house","workbench","chair","door","newroom","medium tent","large tent","bookshelf","desk","table","log","stick"],
+		"craftby": []
+	},
+	{
+		"name": "stone","id": 3,"rarity": "white","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["house","gravel","concrete","stone mace","crude projectile","stone floor"],
+		"craftby": []
+	},
+	{
+		"name": "clay","id": 4,"rarity": "white","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["mortar","clay pot","crude paint"],
+		"craftby": []
+	},
+	{
+		"name": "manure","id": 5,"rarity": "white","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["fertilizer","gross bomb"],
+		"craftby": []
+	},
+	{
+		"name": "feather","id": 6,"rarity": "yellow","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["mortar","clay pot"],
+		"craftby": []
+	},
+	{
+		"name": "ironore","id": 7,"rarity": "yellow","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["iron bar"],
+		"craftby": []
+	},
+	{
+		"name": "berries","id": 8,"rarity": "yellow","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["jelly","juice"],
+		"craftby": []
+	},
+	{
+		"name": "bone","id": 9,"rarity": "yellow","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["broth","crude projectile"],
+		"craftby": []
+	},
+	{
+		"name": "pelt","id": 10,"rarity": "yellow","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["fur coat","fur hat","fur boots"],
+		"craftby": []
+	},
+	{
+		"name": "wax","id": 11,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["candles","polish"],
+		"craftby": []
+	},
+	{
+		"name": "leather","id": 12,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["leather gloves","whip","leather belt"],
+		"craftby": []
+	},
+	{
+		"name": "geode","id": 13,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": [],
+		"craftby": []
+	},
+	{
+		"name": "coal","id": 14,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["fire"],
+		"craftby": []
+	},
+	{
+		"name": "oil","id": 15,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["torch","fire arrows","dough"],
+		"craftby": []
+	},
+
+	{
+		"name": "seeds","id": 16,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["plant", "flour"],
+		"craftby": []
+	},
+	{
+		"name": "copperore","id": 17,"rarity": "green","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["copper bar"],
+		"craftby": []
+	},
+
+	{
+		"name": "silverore","id": 18,"rarity": "blue","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["silver bar"],
+		"craftby": []
+	},
+	{
+		"name": "glassshard","id": 19,"rarity": "blue","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["glass lump"],
+		"craftby": []
+	},
+	{
+		"name": "uncut gem","id": 20,"rarity": "blue","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["cut gem"],
+		"craftby": []
+	},
+	{
+		"name": "glassshard","id": 19,"rarity": "blue","max": 9999,"level": 0,"combattype": 0,"equip": 0,"place": 0,"total": 0,
+		"sources": ["farmland"],
+		"usedin": ["glass lump"],
+		"craftby": []
+	}
+
+	]
+
+}
+}
