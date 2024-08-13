@@ -248,3 +248,27 @@
 	height: 10%;
 	line-height: 18px;
 }
+.crafting-items-contain {
+	width: 19%;
+	height: 94%;
+	float: left;
+	display: inline-block;
+	background-color: tan;
+	border: 2px solid brown;
+}
+.crafting-area-contain {
+	width:60%;
+	height:94%;
+	float: left;
+	background-color: grey;
+	display: inline-block;
+	border: 2px solid brown;
+}
+.crafting-tools-contain {
+	width:19%;
+	height:94%;
+	float: left;
+	background-color: lightblue;
+	display: inline-block;
+	border: 2px solid brown;
+}

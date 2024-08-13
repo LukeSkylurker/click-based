@@ -11,6 +11,22 @@
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
+	<!--testing here-->
+	<div class="crafting-items-contain">
+		<div class="crafting-items">
+			<h1>Crafting Items</h1>
+		</div>
+	</div>
+	<div class="crafting-area-contain">
+		<div class="crafting-area">
+			<h1>Crafting Area</h1>
+		</div>
+	</div>
+	<div class="crafting-tools-contain">
+		<div class="crafting-tools">
+			<h1>Crafting Tools</h1>
+		</div>
+	</div>
   </div>
 </div>
 <div class="title-logo" style="background-color: tan; text-align: center; margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px; height: 50px; line-height: 50px; font-size: 32px;">Traveler's Kingdom</div>
@@ -75,13 +91,14 @@ function closeNav() {
 $(document).ready(function(){
   $(".crafting").click(function(){
     document.getElementById("myNav").style.width = "100%";
-    $('.overlay-content').empty();
-   $('.overlay-content').load('crafting.html');
+    //$('.overlay-content').empty();
+  // $('.overlay-content').load('crafting.html');
    //watchedExplainerVid();
    //$('body').css('overflow-y','hidden');
 });
 });
 </script>
+
 
 
 <script>
