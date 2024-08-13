@@ -15,6 +15,8 @@
 	<div class="crafting-items-contain">
 		<div class="crafting-items">
 			<h1>Crafting Items</h1>
+			<div class="all-crafting-items-display">
+				</div>
 		</div>
 	</div>
 	<div class="crafting-area-contain">
@@ -91,6 +93,10 @@ function closeNav() {
 $(document).ready(function(){
   $(".crafting").click(function(){
     document.getElementById("myNav").style.width = "100%";
+
+	var craftingArray = []
+	craftingArray.push(cityWhiteDrops,cityYellowDrops,cityGreenDrops,cityBlueDrops,cityPurpleDrops);
+	$(".all-crafting-itmes-display").html(craftingArray[0] + craftingArray[1])
     //$('.overlay-content').empty();
   // $('.overlay-content').load('crafting.html');
    //watchedExplainerVid();
