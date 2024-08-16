@@ -16,7 +16,35 @@
 		<div class="crafting-items">
 			<h1>Crafting Items</h1>
 			<div class="all-crafting-items-display">
+				
+
+
 				</div>
+
+<button class="accordion">Section 1</button>
+<div class="panel accord-white">
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel accord-yellow">
+<p>Lorem</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel accord-green">
+<p>Lorem</p>
+</div>
+<button class="accordion">Section 4</button>
+<div class="panel accord-blue">
+<p>Lorem</p></div>
+<button class="accordion">Section 5</button>
+<div class="panel accord-purple">
+<p>Lorem</p>
+</div>
+<button class="accordion">Section 5</button>
+<div class="panel accord-gold">
+<p>Lorem</p>
+</div>
 		</div>
 	</div>
 	<div class="crafting-area-contain">
@@ -31,16 +59,24 @@
 	</div>
   </div>
 </div>
-<div class="title-logo" style="background-color: tan; text-align: center; margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px; height: 50px; line-height: 50px; font-size: 32px;">Traveler's Kingdom</div>
-<div class="menu" style="width:100%; height: 50px; background-color: #004169; color: white; z-index: 2; margin-top: 0px; text-align: center; display:inline-block; font-size: 24px;"><div id="start-game" style="line-height: 50px; float: left; margin-left: 50px;">Start</div><div class="crafting pointer" style="line-height: 50px; float: left; margin-left: 50px;">Craft</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Equip</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Inventory</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Farm</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Tent</div><div class="pointer" style="line-height: 50px; float: left; margin-left: 50px;">Quests</div></div>
+<div class="title-logo">Traveler's Kingdom</div>
+<div class="menu">
+<div id="start-game">Start</div>
+<div class="crafting pointer">Craft</div>
+<div class="pointer">Equip</div>
+<div class="pointer">Inventory</div>
+<div class="pointer">Farm</div>
+<div class="pointer">Tent</div>
+<div class="pointer">Quests</div>
+</div>
 
 <div class="arenas generator-container" style="position: absolute; left: 346px; top: 132px; border: 2px solid black; background-image:url('images/wood-narrow.PNG'); text-align: center; font-size: 40px; font-family: Arial; line-height: 110px;">
-	<div class="single-arena pointer" style="height:49%;width:298px; background-color:#E17130; opacity: 0.85; border: 1px solid black;">
+	<div class="single-arena" style="height:49%;width:298px; background-color:#E17130; opacity: 0.85; border: 1px solid black;">
 		<div class="preview status">
 			<div class="preview-title module-title">preview/status</div>
 		</div>
 	</div>
-	<div class="single-arena pointer" style="height:49%;width:298px; background-color:tan; opacity: 0.85; border: 1px solid black;">
+	<div class="single-arena" style="height:49%;width:298px; background-color:tan; opacity: 0.85; border: 1px solid black;">
 		<div class="dialogue">
 			<div class="dialogue-title module-title">dialogue</div>
 		</div>
@@ -86,28 +122,6 @@
 </script>
 
 <script>
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-  $('body').css('overflow-y','scroll');
-}
-$(document).ready(function(){
-  $(".crafting").click(function(){
-    document.getElementById("myNav").style.width = "100%";
-
-	var craftingArray = []
-	craftingArray.push(cityWhiteDrops,cityYellowDrops,cityGreenDrops,cityBlueDrops,cityPurpleDrops);
-	$(".all-crafting-itmes-display").html(craftingArray[0] + craftingArray[1])
-    //$('.overlay-content').empty();
-  // $('.overlay-content').load('crafting.html');
-   //watchedExplainerVid();
-   //$('body').css('overflow-y','hidden');
-});
-});
-</script>
-
-
-
-<script>
 
 $(document).on('click','.city-up-left',function() {
 	var that = $('.city-up-left');
@@ -137,7 +151,7 @@ $(document).on('click','.city-right',function() {
 	that.off('click');
 	$('.board').empty();
 	$('.board').load('island-world.html');
-	$('body').css('background-image','url("images/island-bk.PNG")');
+	$('body').css('background-image','url("images/ice-bk.PNG")');
 });
 
 $(document).on('click','.city-down-right',function() {
@@ -676,6 +690,7 @@ function movingDownPurple() {
 		console.log(cityPurpleDrops);
 	});
 
+
 var cityWhiteDrops = {
 	hay: 0,
 	wood: 0,
@@ -710,7 +725,7 @@ var cityBlueDrops = {
 	cloth:0,
 	fairydust:0,
 	unicornhorn:0,
-	blackpowder:0,
+	blackpowder:0
 }
 
 var cityPurpleDrops = {
@@ -728,5 +743,171 @@ var cityPurpleDrops = {
 	glowingcrystal:0,
 	moonbeam:0,
 	stardust:0
+}
+</script>
+
+<script>
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  $('body').css('overflow-y','scroll');
+  $(this).removeClass('close-craft');
+}
+$(document).ready(function(){
+  $(".crafting").click(function(){
+  
+  	if ($(this).hasClass('close-craft')) {
+		document.getElementById("myNav").style.width = "0%";
+  		$('body').css('overflow-y','scroll');
+  		$(this).removeClass('close-craft');
+	} else {
+  
+  	$(this).addClass('close-craft');
+  
+    document.getElementById("myNav").style.width = "100%";
+
+	var craftingArray = []
+	craftingArray.push(cityWhiteDrops,cityYellowDrops,cityGreenDrops,cityBlueDrops,cityPurpleDrops);
+	//WHITE
+ 	 const keysWhiteDrops = Object.keys(cityWhiteDrops);
+	 const valuesWhiteDrops = Object.values(cityWhiteDrops);
+ 	 console.log(keysWhiteDrops);
+	 console.log(valuesWhiteDrops)
+	 $(".accord-white").empty();
+	 //YELLOW
+	 const keysYellowDrops = Object.keys(cityYellowDrops);
+	 const valuesYellowDrops = Object.values(cityYellowDrops);
+ 	 console.log(keysYellowDrops);
+	 console.log(valuesYellowDrops)
+	 $(".accord-yellow").empty();
+	 //GREEN
+	 const keysGreenDrops = Object.keys(cityGreenDrops);
+	 const valuesGreenDrops = Object.values(cityGreenDrops);
+ 	 console.log(keysGreenDrops);
+	 console.log(valuesGreenDrops)
+	 $(".accord-green").empty();
+	 //BLUE
+ 	 const keysBlueDrops = Object.keys(cityBlueDrops);
+	 const valuesBlueDrops = Object.values(cityBlueDrops);
+ 	 console.log(keysBlueDrops);
+	 console.log(valuesBlueDrops)
+	 $(".accord-blue").empty();
+	 //Purple
+ 	 const keysPurpleDrops = Object.keys(cityPurpleDrops);
+	 const valuesPurpleDrops = Object.values(cityPurpleDrops);
+ 	 console.log(keysPurpleDrops);
+	 console.log(valuesPurpleDrops)
+	 $(".accord-purple").empty();
+	
+	for (i=0;i<keysYellowDrops.length;i++) {
+			$(".accord-white").append('<div class="keyOnly inline-utility">' + keysWhiteDrops[i] + ':&nbsp;</div><div class="valOnly inline-utility">' + valuesWhiteDrops[i] + '</div><br/>')
+			}
+			
+	for (i=0;i<keysYellowDrops.length;i++) {
+			$(".accord-yellow").append('<div class="keyOnly inline-utility">' + keysYellowDrops[i] + ':&nbsp;</div><div class="valOnly inline-utility">' + valuesYellowDrops[i] + '</div><br/>')
+			}
+	for (i=0;i<keysGreenDrops.length;i++) {
+			$(".accord-green").append('<div class="keyOnly inline-utility">' + keysGreenDrops[i] + ':&nbsp;</div><div class="valOnly inline-utility">' + valuesGreenDrops[i] + '</div><br/>')
+			}
+	for (i=0;i<keysBlueDrops.length;i++) {
+			$(".accord-blue").append('<div class="keyOnly inline-utility">' + keysBlueDrops[i] + ':&nbsp;</div><div class="valOnly inline-utility">' + valuesBlueDrops[i] + '</div><br/>')
+			}
+			
+	for (i=0;i<keysPurpleDrops.length;i++) {
+			$(".accord-purple").append('<div class="keyOnly inline-utility">' + keysPurpleDrops[i] + ':&nbsp;</div><div class="valOnly inline-utility">' + valuesPurpleDrops[i] + '</div><br/>')
+			}
+	
+    //$('.overlay-content').empty();
+  // $('.overlay-content').load('crafting.html');
+   //watchedExplainerVid();
+   //$('body').css('overflow-y','hidden');
+   
+}
+});
+
+});
+</script>
+
+<style>
+.accordion {
+  background-color: #814141;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid white;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #967969; 
+}
+
+.panel {
+  padding: 0 10px;
+  display: none;
+  background-color: #814141;
+  overflow: hidden;
+  width: 80%;
+  margin-left: 8%;
+  color: white;
+  text-align: left;
+ }
+
+.inline-utility {
+	display: inline-block;
+}
+.pointer {
+line-height: 50px; 
+float: left; 
+margin-left: 50px;
+}
+
+.menu {
+width:100%; 
+height: 50px; 
+background-color: #004169; 
+color: white; 
+z-index: 2; 
+margin-top: 0px; 
+text-align: center; 
+display:inline-block; 
+font-size: 24px;
+}
+#start-game {
+line-height: 50px; 
+float: left; 
+margin-left: 50px;
+}
+.title-logo {
+background-color: tan; 
+text-align: center; 
+margin-bottom: 0px; 
+margin-top: 0px; 
+padding-bottom: 0px; 
+height: 50px; 
+line-height: 50px; 
+font-size: 32px;
+}
+</style>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+  	$('.panel').css("display","none");
+    //this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+
 }
 </script>

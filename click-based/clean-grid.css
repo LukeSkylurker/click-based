@@ -260,15 +260,19 @@
 	width:60%;
 	height:94%;
 	float: left;
-	background-color: grey;
+	background-image: url("images/craft-area.PNG");
+	  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 	display: inline-block;
 	border: 2px solid brown;
+	color: white;
 }
 .crafting-tools-contain {
 	width:19%;
 	height:94%;
 	float: left;
-	background-color: lightblue;
+	background-color: tan;
 	display: inline-block;
 	border: 2px solid brown;
 }
